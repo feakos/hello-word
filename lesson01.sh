@@ -7,7 +7,7 @@
 i=0
 while read sor
 	do
-		if [ $((i%2))==0 ]
+		if [ $((i%2)) -eq 0 ]
 		then
 			(0>&1 echo $sor)
 			i=$(($i+1))
