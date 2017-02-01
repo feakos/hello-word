@@ -9,7 +9,6 @@ while read sor
 	do
 		if [ $((i%2))==0 ]
 		then
-		#[ $i -le 10 ]
 			(0>&1 echo $sor)
 			i=$(($i+1))
 		else
