@@ -4,7 +4,6 @@
 # és minden páros számút az stderr-re.
 # Irodalom: héjprogramozás könyv (1. fejezet hello world, 6. fejezet: read parancs)
 
-darab=0
 i=0
 while read sor
 	do
