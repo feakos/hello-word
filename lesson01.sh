@@ -18,5 +18,4 @@ while read sor
 			i=$(($i+1))
 	fi
 done
-echo $sor
 exit 0
