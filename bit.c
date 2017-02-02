@@ -18,31 +18,47 @@ int main(){
 void decToBin(int number){
 	char maradek[20];
 	int i = 0;
+
+	if(number < 0){	
+		printf("Sajnos negativ szamot adtal meg. Holnap visszaterunk ra!\n");
+		printf("De addig is negalom neked %i\n", -number);
+/*		number = -number;
+		while (number != 0){
+			if((number & 1) == 0)
+				maradek[i] = '0';
+			if((number & 1) == 1)
+				maradek[i] = '1';
+
+			number = number >> 1;
+			i++;
+		}
+		maradek[i] = 0;*/
+	}
+	else{
+		while (number != 0){
+			if((number & 1) == 0)
+				maradek[i] = '0';
+			if((number & 1) == 1)
+				maradek[i] = '1';
+
+			number = number >> 1;
+			i++;
+		}
+		maradek[i] = 0;
 	
-	while (number != 0){
-		if((number & 1) == 0)
-			maradek[i] = '0';
-		if((number & 1) == 1)
-			maradek[i] = '1';
+		char temp[i + 1];
+		int j = 0;
+		while(i >= 0){
+			temp[j] = maradek[i];
+			i--;
+			j++;
+		}
 
-		number = number >> 1;
-		i++;
+		for(i = 0; i < sizeof(temp); i++){
+			printf("%c", temp[i]);
+		}
+		printf("\n");
 	}
-	maradek[i] = 0;
-	printf("%i\n", i);
-
-	char temp[i + 1];
-	int j = 0;
-	while(i >= 0){
-		temp[j] = maradek[i];
-		i--;
-		j++;
-	}
-
-	for(i = 0; i < sizeof(temp); i++){
-		printf("%c", temp[i]);
-	}
-	printf("\n");
 
 }
 
