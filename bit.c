@@ -11,7 +11,7 @@ void decToBin(long int number);
 
 int main(){
 	long number;
-	char *end, buffer[BUFFER_SIZE];
+	char *end = NULL, buffer[BUFFER_SIZE];
 	errno = 0;
 
 	fprintf(stdout, "Adj meg egy maximum 64 bites decimális számot: ");
@@ -29,7 +29,21 @@ int main(){
     	fprintf(stderr, "Nincsenek benne számok!\n");
     	exit(EXIT_FAILURE);
     }
+/*
+    if((end != NULL) && (*end != '\0')){
+    	fprintf(stderr, "Az input nem szám!\n");
+    	exit(EXIT_FAILURE);
+    }
     
+	unsigned long out = 0;
+	char* input = valahoval...;
+	char* err_ptr = NULL;
+	out = strtoul(input, &err_ptr; 10);
+	if((err_ptr != NULL) && (*cp_err != '\0')) {
+  		//hibakezelés, az input nem egy szám...
+	}
+*/
+
     decToBin(number);
 /*	
 	if(*end != '\0'){
