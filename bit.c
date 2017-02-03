@@ -14,7 +14,7 @@ int main(){
 	char *end, buffer[BUFFER_SIZE];
 	errno = 0;
 
-	puts("Adj meg egy maximum 64 bites decimális számot: ");
+	fprintf(stdout, "Adj meg egy maximum 64 bites decimális számot: ");
 	fgets(buffer, BUFFER_SIZE, stdin);
 	
 	number = strtol(buffer, &end, BASE);
@@ -22,12 +22,21 @@ int main(){
 	if ((errno == ERANGE && (number == LONG_MAX || number == LONG_MIN)) 
 		|| (errno != 0 && number == 0)){
     	fprintf(stderr, "Ez sajnos több, mint 64 bit!\n");
-    	exit(1);
+    	exit(EXIT_FAILURE);
     }
-    else{
-		decToBin(number);
-	}
-
+    
+    if(end == buffer){
+    	fprintf(stderr, "Nincsenek benne számok!\n");
+    	exit(EXIT_FAILURE);
+    }
+    
+    decToBin(number);
+/*	
+	if(*end != '\0'){
+    	printf("Ezek nem számok: %s\n", end);
+    	exit(EXIT_SUCCESS);
+    }
+*/
 	return 0;
 }
 
