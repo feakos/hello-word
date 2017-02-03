@@ -58,6 +58,11 @@ void decToBin(long int number){
 	char maradek[MAX_BITS + 1];
 	int i = 0;
 
+	if(number == 0){
+		printf("0\n");
+		exit(EXIT_SUCCESS);
+	}
+
 	if(number < 0){	
 		fprintf(stderr, "Sajnos negatív számot adtál meg. Később visszatérünk rá!\n");
 		fprintf(stderr, "De addig is negálom neked %li\n", -number);
