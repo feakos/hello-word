@@ -14,7 +14,7 @@ int main(){
 	char *end, buffer[BUFFER_SIZE];
 	errno = 0;
 
-	puts("Adj meg egy decimális számot: ");
+	puts("Adj meg egy maximum 64 bites decimális számot: ");
 	fgets(buffer, BUFFER_SIZE, stdin);
 	
 	number = strtol(buffer, &end, BASE);
@@ -32,23 +32,12 @@ int main(){
 }
 
 void decToBin(long int number){
-	char maradek[MAX_BITS];
+	char maradek[MAX_BITS + 1];
 	int i = 0;
 
 	if(number < 0){	
-		fprintf(stderr, "Sajnos negativ szamot adtal meg. Holnap visszaterunk ra!\n");
-		fprintf(stderr, "De addig is negalom neked %li\n", -number);
-/*		number = -number;
-		while (number != 0){
-			if((number & 1) == 0)
-				maradek[i] = '0';
-			if((number & 1) == 1)
-				maradek[i] = '1';
-
-			number = number >> 1;
-			i++;
-		}
-		maradek[i] = 0;*/
+		fprintf(stderr, "Sajnos negatív számot adtál meg. Később visszatérünk rá!\n");
+		fprintf(stderr, "De addig is negálom neked %li\n", -number);
 	}
 	else{
 		while (number != 0){
