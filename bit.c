@@ -72,7 +72,7 @@ void decToBin(long int number){
 
 		numberU = ~numberU;
 		numberU = numberU + 0b1;
-		printf("%li\n", numberU);
+
 		while (numberU != 0){
 			if((numberU & 1) == 0)
 				maradek[i] = '0';
