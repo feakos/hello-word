@@ -1,7 +1,7 @@
 #változtók deklarálása
-CC = gcc
-CFLAGS = -Wall
-BINARIES = bit sizes
+CC := gcc
+CFLAGS := -Wall
+BINARIES := bit sizes
 
 all: $(BINARIES)
 
