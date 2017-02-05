@@ -11,9 +11,6 @@ bit: bit.o
 #$@ -> bit - target
 #$^ -> bit.o - dependency lista, ami a : jobb oldala
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
-
 sizes: sizes.o
 	$(CC) $(CFLAGS) -o $@ $^
 
