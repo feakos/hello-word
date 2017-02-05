@@ -1,16 +1,17 @@
 #változtók deklarálása
-CC=gcc
-
-CFLAGS=-Wall -c
+CC = gcc
+CFLAGS = -Wall
 
 all: bit
 
 bit: bit.o
-	$(CC) bit.o -o bit
+	$(CC) $(CFLAGS) bit.o -o bit
 
 bit.o: bit.c
-	$(CC) $(CFLAGS) bit.c
+	$(CC) $(CFLAGS) -c bit.c
 
 clean:
-	rm -rf *o bit
+	rm -f *.o bit
 
+PHONY: all clean
+#ezek nem fájlok!
