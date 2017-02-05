@@ -64,7 +64,7 @@ void decToBin(long int number){
 	unsigned long numberU;
 
 	if(number == 0){
-		printf("0\n");
+		printf("0");
 	}
 
 	if(number < 0){	
