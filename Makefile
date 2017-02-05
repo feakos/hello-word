@@ -7,11 +7,11 @@ all: bit
 bit: bit.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-#$@ -> bit.o -> target
-#$^ -> dependency lista, ami a : jobb oldala
+#$@ -> bit - target
+#$^ -> bit.o - dependency lista, ami a : jobb oldala
 
-bit.o: bit.c
-	$(CC) $(CFLAGS) -c bit.c
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 	rm -f *.o bit
