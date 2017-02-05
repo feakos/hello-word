@@ -65,7 +65,6 @@ void decToBin(long int number){
 
 	if(number == 0){
 		printf("0\n");
-		exit(EXIT_SUCCESS);
 	}
 
 	if(number < 0){	
